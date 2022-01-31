@@ -15,11 +15,24 @@ public class testEntity {
 
 //    @Getter @Setter
 //    @NotBlank -- Not LOMBOK
+
     String name;
+    public String getName() {
+        return this.name;
+    }
+    public void setName() {
+        this.name = name;
+    }
 
 //    @Getter @Setter
 //    @NotNull -- NOT LOMBOK
     Integer power;
+    public Integer getPower() {
+        return this.power;
+    }
+    public void setPower() {
+        this.power = power;
+    }
 
     public testEntity(String name, Integer power) {
         this.name = name;

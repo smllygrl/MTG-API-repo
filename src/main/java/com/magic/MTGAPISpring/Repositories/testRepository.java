@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface testRepository {
+public interface testRepository extends JpaRepository<testEntity, Long>{
 
     Optional<testEntity> findById(long id);
     List<testEntity> findAll();
 
-    void save(testEntity newTestEntity);
+//    void save(testEntity newTestEntity);
 
 }

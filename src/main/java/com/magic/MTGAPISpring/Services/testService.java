@@ -16,7 +16,7 @@ import java.util.Optional;
 public class testService {
 
 //    Errors if the below repository is annotated w/ Autowired
-//    @Autowired
+    @Autowired
     private testRepository repository;
 
     public List<testEntity> all() {return this.repository.findAll();}
@@ -31,7 +31,6 @@ public class testService {
 
     public void create(testCreatePayload test) {
         testEntity newTestEntity = new testEntity(test.getName(), test.getPower());
-
         repository.save(newTestEntity);
     }
 
