@@ -1,9 +1,11 @@
 package com.magic.MTGAPISpring.Entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity(name = "test_entity")
 public class testEntity {
 
     //This allows database to automatically generate id
