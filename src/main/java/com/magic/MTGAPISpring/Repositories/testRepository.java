@@ -13,6 +13,12 @@ public interface testRepository extends JpaRepository<testEntity, Long>{
     Optional<testEntity> findById(long id);
     List<testEntity> findAll();
 
+    Boolean existsByName(String name);
+    Boolean existsByNameAndId(String name, Long id);
+
+    void delete(Long id);
+
+
 //    void save(testEntity newTestEntity);
 
 }

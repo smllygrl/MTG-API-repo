@@ -20,8 +20,8 @@ public class testEntity {
     public String getName() {
         return this.name;
     }
-    public void setName() {
-        this.name = name;
+    public void setName(String name) {
+        this.name = this.name;
     }
 
 //    @Getter @Setter
@@ -30,8 +30,8 @@ public class testEntity {
     public Integer getPower() {
         return this.power;
     }
-    public void setPower() {
-        this.power = power;
+    public void setPower(Integer power) {
+        this.power = this.power;
     }
 
     public testEntity(String name, Integer power) {

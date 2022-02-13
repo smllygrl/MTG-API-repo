@@ -2,6 +2,7 @@ package com.magic.MTGAPISpring.Services;
 
 import com.magic.MTGAPISpring.Entities.testEntity;
 import com.magic.MTGAPISpring.Payloads.Requests.testCreatePayload;
+import com.magic.MTGAPISpring.Payloads.Requests.testUpdatePayload;
 import com.magic.MTGAPISpring.Repositories.testRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,29 @@ public class testService {
         repository.save(newTestEntity);
     }
 
+    public void delete(Long id) {
+        this.repository.delete(id);
+    }
+
+    public testEntity update(Long id, testUpdatePayload data) {
+        Optional<testEntity> fetchedEntity = this.repository.findById(id);
+
+        if (fetchedEntity.isEmpty()) {
+            return null;
+        }
+
+        testEntity test = fetchedEntity.get();
+
+        if (data.getName() != null && !"".equals(data.getName())) {
+            test.setName(data.getName());
+        }
+
+        if (data.getPower() != null) {
+            test.setPower(data.getPower());
+        }
+
+        return this.repository.save(test);
 
 
+    }
 }
